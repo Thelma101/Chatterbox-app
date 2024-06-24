@@ -1,9 +1,11 @@
+import React, { useState } from 'react'; 
+import SigninImg from '../img/signin.png';
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 const Navbar = () => {
-  const [user] = useAuthState(auth)
+  const [user, setUser] = useAuthState(auth); 
 
   const googleSignIn = () => {
     if (user) {
