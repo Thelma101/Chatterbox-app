@@ -1,9 +1,16 @@
-import React from 'react'
+import SigninImg from '../img/googlesingin'
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
+    <div className="navbar">
+      <div className="logo">
+        <img src={SigninImg} alt="logo" />
+      </div>
+      <div className="google-signin">
+        <GoogleSignin />
+      </div>
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;
