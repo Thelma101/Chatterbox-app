@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-import SigninImg from '../img/signin.png';
+import googlesingin from '../img/googlesingin.png';
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="logo">
-        <img src={SigninImg} alt="logo" />
+        <img src={googlesingin} alt="logo" />
       </div>
       <div className="google-signin">
         {googleSignIn()}
