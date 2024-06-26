@@ -18,6 +18,10 @@ const Navbar = () => {
     );
   }
 
+  const googleSignOut = () => {
+    
+  }
+
   return (
     <div className="navbar">
       <div className="logo">
