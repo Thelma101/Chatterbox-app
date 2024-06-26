@@ -1,34 +1,31 @@
-import React, { useState } from 'react'; 
-import googlesingin from '../img/googlesingin.png';
+import React, { useState } from 'react';
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 const Navbar = () => {
-  const [user, setUser] = useAuthState(auth); 
+  const [user] = useAuthState(auth);
 
   const googleSignIn = () => {
-    if (user) {
-      return (
-        <button className="sign-in" onClick={() => setUser(false)}>Sign Out</button>
-      );
-    }
-    return (
-      <button className="sign-in" onClick={() => setUser(true)}>Sign In</button>
-    );
-  }
+    const provider = new GoogleAuthProvider();
+    signInWithRedirect(auth, provider);
+  };
 
-  const googleSignOut = () => {
-    
-  }
+  const signOut = () => {
+    auth.signOut();
+  };
 
   return (
     <div className="navbar">
       <div className="logo">
-        <img src={googlesingin} alt="logo" />
+        <img src="path/to/SigninImg" alt="logo" />
       </div>
       <div className="google-signin">
-        {googleSignIn()}
+        {user ? (
+          <button className="sign-in" onClick={signOut}>Sign Out</button>
+        ) : (
+          <button className="sign-in" onClick={googleSignIn}>Sign In</button>
+        )}
       </div>
     </div>
   );
