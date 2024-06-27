@@ -1,12 +1,14 @@
 import React from 'react'
 import GoogleSignin from "../img/googlesingin.png"
-import { GoogleAuthProvider } from 'firebase/auth';
+import { auth } from "../firebase"
+// import { GoogleAuthProvider } from 'firebase/auth';
 import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
 
 const Welcome = () => {
   const googleSignIn = () => {
     window.location.href = "http://localhost:3001/auth/google";
-    const provider = GoogleAuthProvider()
+    const provider = new GoogleAuthProvider();
+    signInWithRedirect(auth, provider);
   }
   return (
     <div>
