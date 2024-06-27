@@ -2,10 +2,14 @@ import React from 'react'
 
 const Welcome = () => {
   const googleSignIn = () => {
-    
+    window.location.href = "http://localhost:3001/auth/google";
   }
   return (
-    <div>Welcome</div>
+    <div>
+      <main>
+        
+      </main>
+    </div>
   )
 }
 
