@@ -21,7 +21,7 @@ const Welcome = () => {
         </button>
       </main>
     </div>
-  )
-}
+  );
+};
 
 export default Welcome;
