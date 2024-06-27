@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { auth } from "../firebase"
 import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
+import { auth, db } from '../firebase';
+import 
+
 
 const SendMessage = () => {
     return (
