@@ -1,4 +1,5 @@
 import React from 'react'
+import GoogleSignin from "../img/"
 
 const Welcome = () => {
   const googleSignIn = () => {
