@@ -1,6 +1,7 @@
 import React from 'react'
 import GoogleSignin from "../img/googlesingin.png"
 import { GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
 
 const Welcome = () => {
   const googleSignIn = () => {
