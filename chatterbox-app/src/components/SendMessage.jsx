@@ -23,4 +23,4 @@ const SendMessage = () => {
     );
   };
 
-export default SendMessage; 
+export default SendMessage;
