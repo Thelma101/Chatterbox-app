@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../firebase"
 import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
 import { auth, db } from '../firebase';
-import 
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 
 const SendMessage = () => {
@@ -23,4 +23,4 @@ const SendMessage = () => {
     );
   };
 
-export default SendMessage;
+export default SendMessage; 
