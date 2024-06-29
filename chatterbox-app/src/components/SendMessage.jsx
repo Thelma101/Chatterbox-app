@@ -6,6 +6,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 
 const SendMessage = () => {
+    const [message, setMessage] = useState('');
     return (
       <form className="send-message">
         <label htmlFor="messageInput" hidden>
