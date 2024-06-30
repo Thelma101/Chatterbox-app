@@ -17,6 +17,7 @@ const SendMessage = () => {
         addDoc(collection(db, 'messages'), {
             timestamp,
             message,
+            
     })
     }
     return (
