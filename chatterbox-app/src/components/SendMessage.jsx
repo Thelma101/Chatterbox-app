@@ -22,7 +22,7 @@ const SendMessage = () => {
                 createdAt: serverTimestamp(),
                 uid,
               });
-              setMessage("");
+              setMessage('');
           }
         
     
