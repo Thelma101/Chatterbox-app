@@ -8,20 +8,28 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 const SendMessage = () => {
     const [message, setMessage] = useState('');
 
-    const sendMessage = (e) => {
+    const sendMessage = async (e) => {
         e.preventDefault();
-        if (!message) return;
-
-        const timestamp = serverTimestamp();
-
-        addDoc(collection(db, 'messages'), {
-            timestamp,
-            message,
-            
-    })
-    }
+        if (message.trim() === "") {
+            alert("Enter valid message");
+            return;
+          }
+          const { uid, displayName, photoURL } = auth.currentUser;
+            await addDoc(collection(db, "messages"), {
+                text: message,
+                name: displayName,
+                avatar: photoURL,
+                createdAt: serverTimestamp(),
+                uid,
+              });
+              setMessage("");
+          }
+        
+    
     return (
-      <form className="send-message">
+      <form className="send-message" onSubmit={(e) => {
+        sendMessage(e);
+      }} >
         <label htmlFor="messageInput" hidden>
           Enter Message
         </label>
