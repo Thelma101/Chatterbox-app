@@ -26,6 +26,7 @@ const SendMessage = () => {
           }
         
     
+          
     return (
       <form className="send-message" onSubmit={(e) => {
         sendMessage(e);
